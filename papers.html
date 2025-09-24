@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papers - Morpholab Laboratory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .papers-page {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+        
+        .papers-header {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .papers-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .papers-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .paper-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .paper-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-hover);
+        }
+        
+        .paper-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .paper-authors {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .paper-abstract {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .paper-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .back-link::before {
+            content: '← ';
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Morpholab</h1>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#research">Investigación</a></li>
+                        <li><a href="papers.html" class="active">Papers</a></li>
+                        <li><a href="index.html#gallery">Galería</a></li>
+                        <li><a href="index.html#contact">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Papers Page Content -->
+    <main class="papers-page">
+        <div class="container">
+            <a href="index.html" class="back-link">Volver al inicio</a>
+            
+            <div class="papers-header">
+                <h1>Publicaciones Científicas</h1>
+                <p>Nuestra colección de papers y publicaciones en morfología y anatomía comparada</p>
+            </div>
+
+            <div class="papers-grid">
+                <div class="paper-card">
+                    <h3 class="paper-title">Anatomía del Segmento Prehiliar de la Arteria Renal en Caninos</h3>
+                    <div class="paper-authors">Dr. Juan Pérez, Dra. María González, Dr. Carlos López</div>
+                    <div class="paper-abstract">
+                        Estudio detallado de la anatomía vascular del riñón canino, enfocándose en las características morfológicas del segmento prehiliar de la arteria renal y sus variaciones anatómicas.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Journal of Veterinary Anatomy</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-doi">DOI</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Morfometría, Planimetría y Estereología en el Hueso Sesamoídeo Distal en Manos de Equinos</h3>
+                    <div class="paper-authors">Dra. Ana Martínez, Dr. Roberto Silva, Dra. Carmen Ruiz</div>
+                    <div class="paper-abstract">
+                        Análisis cuantitativo de las características morfológicas del hueso sesamoídeo distal en equinos, comparando especímenes con y sin síndrome navicular mediante técnicas de morfometría y estereología.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Equine Veterinary Journal</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-doi">DOI</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Skull Anatomy of the Endangered Patagonian Huemul Deer</h3>
+                    <div class="paper-authors">Dr. Pedro Morales, Dra. Isabel Torres, Dr. Miguel Herrera</div>
+                    <div class="paper-abstract">
+                        Descripción anatómica detallada del cráneo del ciervo huemul patagónico (Hippocamelus bisulcus), incluyendo medidas morfométricas y comparaciones con otras especies de cérvidos.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2022</span>
+                        <span>Journal of Mammalian Biology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-doi">DOI</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Quantification of Collagen Fibers in Canine Uteri Treated with Medroxyprogesterone Acetate</h3>
+                    <div class="paper-authors">Dra. Laura Fernández, Dr. Andrés Castro, Dra. Patricia Vega</div>
+                    <div class="paper-abstract">
+                        Estudio histomorfológico y estereológico del útero canino tratado con acetato de medroxiprogesterona, evaluando los cambios en la distribución y cantidad de fibras de colágeno.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2022</span>
+                        <span>Veterinary Pathology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-doi">DOI</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Effects of Air Pollution on the Female Reproductive System</h3>
+                    <div class="paper-authors">Dr. Fernando Rojas, Dra. Claudia Morales, Dr. Diego Paredes</div>
+                    <div class="paper-abstract">
+                        Investigación sobre los efectos de la contaminación del aire producida por la combustión de leña en el sistema reproductivo femenino, con enfoque en estudios morfológicos.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2021</span>
+                        <span>Environmental Health Perspectives</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-doi">DOI</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Criopreservación de Espermatozoides Caninos a -80°C</h3>
+                    <div class="paper-authors">Dra. Marcela Jiménez, Dr. Rodrigo Sánchez, Dra. Valeria Muñoz</div>
+                    <div class="paper-abstract">
+                        Evaluación de la viabilidad e integridad de la membrana plasmática en espermatozoides caninos criopreservados a -80°C, utilizando técnicas de microscopía y análisis funcional.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2021</span>
+                        <span>Theriogenology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-doi">DOI</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Morpholab Laboratory</h3>
+                    <p>Universidad de Valparaíso, Chile</p>
+                    <p>www.morpholab.cl</p>
+                </div>
+                <div class="footer-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.123456789!2d-71.6200000!3d-33.0450000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e0b4c4c4c4c4%3A0x1234567890abcdef!2sUniversidad%20de%20Valpara%C3%ADso!5e0!3m2!1ses!2scl!4v1234567890123!5m2!1ses!2scl"
+                        width="100%" 
+                        height="200" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
