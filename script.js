@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initHeaderScroll();
     initAutoGallery();
+    initMobileMenu();
+    initCardsCarousel();
 });
 
 // Gallery Modal Functionality
@@ -276,74 +278,36 @@ animationStyles.textContent = `
 `;
 document.head.appendChild(animationStyles);
 
-// Mobile menu toggle (if needed for future enhancement)
+// Mobile menu functionality
 function initMobileMenu() {
-    const nav = document.querySelector('.nav');
-    const navList = document.querySelector('.nav-list');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navList = document.getElementById('nav-list');
     
-    // Create mobile menu button
-    const mobileMenuBtn = document.createElement('button');
-    mobileMenuBtn.className = 'mobile-menu-btn';
-    mobileMenuBtn.innerHTML = '☰';
-    mobileMenuBtn.style.cssText = `
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--text-dark);
-    `;
-    
-    nav.insertBefore(mobileMenuBtn, navList);
-    
-    // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', function() {
-        navList.classList.toggle('mobile-open');
-    });
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-list a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navList.classList.remove('mobile-open');
+    if (mobileMenuToggle && navList) {
+        // Toggle mobile menu
+        mobileMenuToggle.addEventListener('click', function() {
+            navList.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
         });
-    });
-    
-    // Add mobile menu styles
-    const mobileStyles = document.createElement('style');
-    mobileStyles.textContent = `
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block !important;
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-list a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navList.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navList.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                navList.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
             }
-            
-            .nav-list {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-            }
-            
-            .nav-list.mobile-open {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-    `;
-    document.head.appendChild(mobileStyles);
+        });
+    }
 }
-
-// Initialize mobile menu
-document.addEventListener('DOMContentLoaded', initMobileMenu);
 
 // Performance optimization: Lazy loading for images
 function initLazyLoading() {
@@ -363,6 +327,97 @@ function initLazyLoading() {
     images.forEach(img => imageObserver.observe(img));
 }
 
+// Cards Carousel Functionality
+function initCardsCarousel() {
+    const carousel = document.getElementById('cardsCarousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dots = document.querySelectorAll('.dot');
+    
+    if (!carousel || !prevBtn || !nextBtn) return;
+    
+    let currentSlide = 0;
+    const totalSlides = 4;
+    const slideWidth = 100 / totalSlides; // 25% per slide
+    
+    function updateCarousel() {
+        const translateX = -currentSlide * slideWidth;
+        carousel.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+        
+        // Update button states
+        prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+    }
+    
+    function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateCarousel();
+        }
+    }
+    
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateCarousel();
+        }
+    }
+    
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // Touch/swipe support
+    let startX = 0;
+    let endX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    
+    carousel.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                nextSlide(); // Swipe left - next slide
+            } else {
+                prevSlide(); // Swipe right - previous slide
+            }
+        }
+    }
+    
+    // Initialize
+    updateCarousel();
+}
+
 // Error handling for missing images
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('img');
@@ -374,3 +429,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+

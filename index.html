@@ -4,30 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morpholab Laboratory - www.morpholab.cl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>Morpholab</h1>
-                </div>
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li><a href="#home">Inicio</a></li>
-                        <li><a href="#research">Investigación</a></li>
-                        <li><a href="#papers">Papers</a></li>
-                        <li><a href="#gallery">Galería</a></li>
-                        <li><a href="#contact">Contacto</a></li>
-                    </ul>
-                </nav>
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="/">
+                    <img src="./assets/img/Logo1.png" alt="Icono de Morpholab" width="50" height="50">
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#research">Investigación</a></li>
+                    <li><a href="papers.html">Papers</a></li>
+                    <li><a href="#gallery">Galería</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="URL_DE_TU_INSTAGRAM" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="URL_DE_TU_X" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
             </div>
         </div>
-    </header>
-
+    </div>
+</header>
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-image">
@@ -35,7 +50,7 @@
             <div class="hero-content">
                 <h2 class="hero-title">Morpholab Laboratory</h2>
                 <p class="hero-description">
-                    Laboratorio especializado en morfología y anatomía comparada.<br>
+                    Laboratorio especializado en Morfología y Anatomía comparada.<br>
                     Investigación de excelencia en ciencias biomédicas.
                 </p>
             </div>
@@ -46,66 +61,96 @@
     <section id="research" class="cards-section">
         <div class="container">
             <h2 class="section-title">Investigaciones Destacadas</h2>
-            <div class="cards-carousel">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="assets/img/2.jpg" alt="Investigación 1">
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-btn-prev" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="cards-carousel" id="cardsCarousel">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/Anatomy-of-Prehiliar-Segment-of-the-Renal-Artery-in-Dogs.jpeg" alt="Anatomía Comparada">
+                        </div>
+                        <div class="card-content">
+                            <h3>Anatomía Comparada</h3>
+                            <p>Estudios morfológicos en diferentes especies animales para comprender la evolución y adaptación.</p>
+                            <div class="keywords">
+                                <span class="keyword">Morfología</span>
+                                <span class="keyword">Evolución</span>
+                                <span class="keyword">Adaptación</span>
+                            </div>
+                            <div class="card-buttons">
+                                <button class="btn btn-pdf">PDF</button>
+                                <button class="btn btn-link">Link</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Anatomía Comparada</h3>
-                        <p>Estudios morfológicos en diferentes especies animales para comprender la evolución y adaptación.</p>
-                        <div class="card-buttons">
-                            <button class="btn btn-pdf">PDF</button>
-                            <button class="btn btn-doi">DOI</button>
-                            <button class="btn btn-link">Link</button>
+                    
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/Histomorphometrics-and-Quantitative-Unbiased-Stereological-estimates-in-Canine-Uteri-Treated-with-Medroxyprogesterone-Acetate.jpeg" alt="Histología Avanzada">
+                        </div>
+                        <div class="card-content">
+                            <h3>Histología Avanzada</h3>
+                            <p>Análisis microscópico de tejidos y estructuras celulares con técnicas de última generación.</p>
+                            <div class="keywords">
+                                <span class="keyword">Microscopía</span>
+                                <span class="keyword">Tejidos</span>
+                                <span class="keyword">Células</span>
+                            </div>
+                            <div class="card-buttons">
+                                <button class="btn btn-pdf">PDF</button>
+                                <button class="btn btn-link">Link</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/Morphometry-Planimetry-and-Stereology-in-the-Distal-Sesamoid-Bone-in-Equine-Foot-with-and-without-Navicular-Syndrome..png" alt="Morfometría">
+                        </div>
+                        <div class="card-content">
+                            <h3>Morfometría</h3>
+                            <p>Medición y análisis cuantitativo de formas biológicas para estudios comparativos.</p>
+                            <div class="keywords">
+                                <span class="keyword">Medición</span>
+                                <span class="keyword">Análisis</span>
+                                <span class="keyword">Comparativo</span>
+                            </div>
+                            <div class="card-buttons">
+                                <button class="btn btn-pdf">PDF</button>
+                                <button class="btn btn-link">Link</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/Quantitative-Analysis-of-Collagen-Fibrillar-Structure-in-Canine-Uterus-Exposed-to-Acetate-of-Medroxyprogesterone-Using-Second-Harmonic-Generation-Microscopy.png" alt="Esterología">
+                        </div>
+                        <div class="card-content">
+                            <h3>Esterología</h3>
+                            <p>Métodos cuantitativos para el análisis de estructuras tridimensionales en biología.</p>
+                            <div class="keywords">
+                                <span class="keyword">3D</span>
+                                <span class="keyword">Cuantitativo</span>
+                                <span class="keyword">Estructuras</span>
+                            </div>
+                            <div class="card-buttons">
+                                <button class="btn btn-pdf">PDF</button>
+                                <button class="btn btn-link">Link</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="card">
-                    <div class="card-image">
-                        <img src="assets/img/3.jpg" alt="Investigación 2">
-                    </div>
-                    <div class="card-content">
-                        <h3>Histología Avanzada</h3>
-                        <p>Análisis microscópico de tejidos y estructuras celulares con técnicas de última generación.</p>
-                        <div class="card-buttons">
-                            <button class="btn btn-pdf">PDF</button>
-                            <button class="btn btn-doi">DOI</button>
-                            <button class="btn btn-link">Link</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-image">
-                        <img src="assets/img/4.jpg" alt="Investigación 3">
-                    </div>
-                    <div class="card-content">
-                        <h3>Morfometría</h3>
-                        <p>Medición y análisis cuantitativo de formas biológicas para estudios comparativos.</p>
-                        <div class="card-buttons">
-                            <button class="btn btn-pdf">PDF</button>
-                            <button class="btn btn-doi">DOI</button>
-                            <button class="btn btn-link">Link</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-image">
-                        <img src="assets/img/5.jpg" alt="Investigación 4">
-                    </div>
-                    <div class="card-content">
-                        <h3>Esterología</h3>
-                        <p>Métodos cuantitativos para el análisis de estructuras tridimensionales en biología.</p>
-                        <div class="card-buttons">
-                            <button class="btn btn-pdf">PDF</button>
-                            <button class="btn btn-doi">DOI</button>
-                            <button class="btn btn-link">Link</button>
-                        </div>
-                    </div>
-                </div>
+                <button class="carousel-btn carousel-btn-next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-dots" id="carouselDots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
             </div>
         </div>
     </section>
@@ -127,34 +172,34 @@
             <h2 class="section-title">Galería de Imágenes</h2>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="assets/img/6.jpg" alt="Galería 1">
+                    <img src="assets/img/Anatomy-of-Prehiliar-Segment-of-the-Renal-Artery-in-Dogs.jpeg" alt="Anatomía Arteria Renal Canina">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/7.jpg" alt="Galería 2">
+                    <img src="assets/img/Morphometry-Planimetry-and-Stereology-in-the-Distal-Sesamoid-Bone-in-Equine-Foot-with-and-without-Navicular-Syndrome..png" alt="Morfometría Hueso Sesamoídeo Equino">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/8.jpg" alt="Galería 3">
+                    <img src="assets/img/13.jpeg" alt="Anatomía Cráneo Huemul">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/9.jpg" alt="Galería 4">
+                    <img src="assets/img/Quantification-of-collagen-fibers-in-canine-uteri-treated-with-medroxyprogesterone-acetate.-1-e1660883265849.jpeg" alt="Cuantificación Fibras Colágeno">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/10.jpg" alt="Galería 5">
+                    <img src="assets/img/Effects-on-the-female-reproductive-system-of-air-pollution-produced-by-the-use-of-wood-combustion-for-residential-heating.jpg" alt="Efectos Contaminación Sistema Reproductivo">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/11.jpg" alt="Galería 6">
+                    <img src="assets/img/Cryopreservation-of-Canine-Spermatozoa-at-80C.jpeg" alt="Criopreservación Espermatozoides Caninos">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/12.jpg" alt="Galería 7">
+                    <img src="assets/img/Histomorphometrics-and-Quantitative-Unbiased-Stereological-estimates-in-Canine-Uteri-Treated-with-Medroxyprogesterone-Acetate.jpeg" alt="Histomorfometría Útero Canino">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/13.jpg" alt="Galería 8">
+                    <img src="assets/img/Planimetrics-and-Stereological-characteristics-of-lateral-and-medial-palmar-nerves-in-hands-of-equine-with-and-without-Navicular-.jpeg" alt="Características Nervios Palmares Equinos">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/14.jpg" alt="Galería 9">
+                    <img src="assets/img/Quantitative-Analysis-of-Collagen-Fibrillar-Structure-in-Canine-Uterus-Exposed-to-Acetate-of-Medroxyprogesterone-Using-Second-Harmonic-Generation-Microscopy.png" alt="Análisis Cuantitativo Colágeno">
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/15.jpg" alt="Galería 10">
+                    <img src="assets/img/Validation-of-SYBR-14-and-6-CFDA-to-Evaluate-the-Viability-and-Plasma-Membrane-Integrity-in-Sperm-of.jpeg" alt="Validación SYBR-14 y 6-CFDA">
                 </div>
             </div>
         </div>
