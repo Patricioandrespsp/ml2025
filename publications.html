@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papers - Morpholab Laboratory</title>
+    <title>Morpholab Laboratory - www.morpholab.cl</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .papers-page {
+            margin-top: 70px;
+            padding: 2rem 0;
+        }
+        
+        .papers-header {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .papers-header h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .papers-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .paper-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .paper-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-hover);
+        }
+        
+        .paper-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .paper-authors {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .paper-abstract {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .paper-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .back-link::before {
+            content: '← ';
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="/">
+                    <img src="./assets/img/Logo1.png" alt="Icono de Morpholab" width="50" height="50">
+                </a>
+            </div>
+            <nav class="nav">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list" id="nav-list">
+
+                    <li><a href="#research">Grant</a></li>
+                    <li><a href="#research">News</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/morphology_lab" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/PauloSalinas" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Papers Page Content -->
+    <main class="papers-page">
+        <div class="container">
+
+            
+            <div class="papers-header">
+                <h1>Publications</h1>
+                <p>Nuestra colección de papers y publicaciones en morfología y anatomía comparada</p>
+            </div>
+
+            <div class="papers-grid">
+                <div class="paper-card">
+                    <h3 class="paper-title">A propósito del COVID-19 y la polución del aire</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Análisis de la relación entre la contaminación del aire y la propagación del COVID-19, evaluando los efectos en la salud respiratoria y las implicaciones para la salud pública.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Environmental Health Research</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Anatomía del Segmento Prehiliar de la Arteria Renal en Caninos</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Estudio detallado de la anatomía vascular del riñón canino, enfocándose en las características morfológicas del segmento prehiliar de la arteria renal y sus variaciones anatómicas.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Journal of Veterinary Anatomy</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Anatomical and Histological Characterization of the Digestive Canal of the Golden Kingklip Genypterus blacodes</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Caracterización anatómica e histológica del canal digestivo del congrio dorado, proporcionando información detallada sobre la estructura y función del sistema digestivo en esta especie marina.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Marine Biology Research</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Anatomy, Morphometry and Radiography in the thoracic limb bones of the Patagonian Huemul Deer (Hippocamelus bisulcus)</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Estudio integral de la anatomía, morfometría y radiografía de los huesos del miembro torácico del ciervo huemul patagónico, especie en peligro de extinción.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Wildlife Biology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Características Planimétricas y Estereológicas de los Nervios Palmar Lateral y Medial en Manos de Equinos con y sin Síndrome Navicular</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Análisis planimétrico y estereológico de los nervios palmares en equinos, comparando especímenes con y sin síndrome navicular para identificar cambios morfológicos asociados.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Equine Veterinary Journal</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Color-Based Segmentation vs. Stereology: A Simple Comparison Between Two Semi-Automated Methods of Image Analysis for the Quantification of Collagen</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Comparación entre métodos de segmentación basados en color y estereología para la cuantificación de colágeno en análisis de imágenes, evaluando la precisión y eficiencia de cada método.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Image Analysis Research</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Criopreservación de Espermatozoides Caninos a -80°C</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Evaluación de la viabilidad e integridad de la membrana plasmática en espermatozoides caninos criopreservados a -80°C, utilizando técnicas de microscopía y análisis funcional.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Theriogenology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Effects on the Female Reproductive System of Air Pollution Produced by the Use of Wood Combustion for Residential Heating: Challenges and Perspectives of Morphological Studies</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Investigación sobre los efectos de la contaminación del aire producida por la combustión de leña en el sistema reproductivo femenino, con enfoque en estudios morfológicos y perspectivas futuras.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Environmental Health Perspectives</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Estudio Histoquímico de la Distribución de las Fibras de Colágeno en Hueso Sesamoídeo Distal de Equinos con y sin Síndrome Navicular</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Análisis histoquímico de la distribución de fibras de colágeno en el hueso sesamoídeo distal de equinos, comparando especímenes con y sin síndrome navicular.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Equine Veterinary Research</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Exposure to Wood Smoke Pollution During Pre-Gestational Period of Rat has Effects on Placenta Volume and Fetus Size</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Estudio sobre los efectos de la exposición a contaminación por humo de leña durante el período pre-gestacional en ratas, evaluando el impacto en el volumen placentario y tamaño fetal.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Reproductive Toxicology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Freezing dog semen using -80°C ultra freezer: Sperm function and in vivo fertility</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Evaluación de la función espermática y fertilidad in vivo en semen canino congelado utilizando ultra congelador a -80°C, analizando la viabilidad y capacidad reproductiva.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Theriogenology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Histomorphometrics and quantitative unbiased stereology in canine uteri treated with medroxyprogesterone acetate</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Estudio histomorfológico y estereológico cuantitativo no sesgado del útero canino tratado con acetato de medroxiprogesterona, evaluando cambios estructurales y funcionales.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Veterinary Pathology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Morfometría, Planimetría y Estereología en el Hueso Sesamoídeo Distal en Manos de Equinos con y sin Síndrome Navicular</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Análisis cuantitativo de las características morfológicas del hueso sesamoídeo distal en equinos, comparando especímenes con y sin síndrome navicular mediante técnicas de morfometría y estereología.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Equine Veterinary Journal</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Morphometric, Anatomic and Radiographic Study of Bone of the Pelvic Limb of Endangered Patagonian Huemul Deer Hippocamelus bisulcus</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Estudio morfométrico, anatómico y radiográfico de los huesos del miembro pélvico del ciervo huemul patagónico en peligro de extinción, proporcionando datos valiosos para su conservación.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Wildlife Biology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Navicular Syndrome-related changes to collagen proportion of different cross-sections of the flexor tendons in equine distal forelimb</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Análisis de los cambios relacionados con el síndrome navicular en la proporción de colágeno de diferentes secciones transversales de los tendones flexores en el miembro anterior distal equino.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Equine Veterinary Research</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Phenotypic response of male and neomale of O. mykiss parr subjected to 8° and 16°C water temperature during early life stage</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Evaluación de la respuesta fenotípica de machos y neomachos de O. mykiss parr sometidos a temperaturas de agua de 8° y 16°C durante la etapa temprana de vida.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Aquaculture Research</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Quantification of Collagen Fibers in Canine Uteri Treated with Medroxyprogesterone Acetate</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Cuantificación de fibras de colágeno en úteros caninos tratados con acetato de medroxiprogesterona, utilizando técnicas de análisis cuantitativo y estereológico.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Veterinary Pathology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Quantitative Analysis of Collagen Fibrillar Structure in Canine Uterus Exposed to Acetate of Medroxyprogesterone Using Second Harmonic Generation Microscopy</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Análisis cuantitativo de la estructura fibrilar del colágeno en útero canino expuesto a acetato de medroxiprogesterona utilizando microscopía de generación de segundo armónico.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Advanced Microscopy Research</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Skull anatomy of the endangered Patagonian huemul deer Hippocamelus bisulcus</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Descripción anatómica detallada del cráneo del ciervo huemul patagónico (Hippocamelus bisulcus), incluyendo medidas morfométricas y comparaciones con otras especies de cérvidos.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Journal of Mammalian Biology</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+
+                <div class="paper-card">
+                    <h3 class="paper-title">Validación de SYBR-14 y 6-CFDA para Evaluar la Viabilidad e Integridad de la Membrana Plasmática en Espermatozoides Caninos de Raza Chihuahua</h3>
+                    <div class="paper-authors">Morpholab Research Team</div>
+                    <div class="paper-abstract">
+                        Validación de técnicas de tinción con SYBR-14 y 6-CFDA para evaluar la viabilidad e integridad de la membrana plasmática en espermatozoides caninos de raza Chihuahua.
+                    </div>
+                    <div class="paper-meta">
+                        <span>2023</span>
+                        <span>Veterinary Reproduction</span>
+                    </div>
+                    <div class="paper-links">
+                        <button class="btn btn-pdf">PDF</button>
+                        <button class="btn btn-link">Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Morpholab Laboratory</h3>
+                    <p>Universidad de Valparaíso, Chile</p>
+                    <p>www.morpholab.cl</p>
+                </div>
+                <div class="footer-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.123456789!2d-71.6200000!3d-33.0450000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e0b4c4c4c4c4%3A0x1234567890abcdef!2sUniversidad%20de%20Valpara%C3%ADso!5e0!3m2!1ses!2scl!4v1234567890123!5m2!1ses!2scl"
+                        width="100%" 
+                        height="200" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
