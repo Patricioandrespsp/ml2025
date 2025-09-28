@@ -854,62 +854,82 @@ html {
 
 
 
-/* Seccion videos */
+/* ======================================= */
+/* ESTILOS PARA LA SECCIÓN DE VIDEOS       */
+/* ======================================= */
 
-/* Estilos base para la sección de videos */
-.videos-section {
-    padding: 20px;
-    text-align: center; /* Centra el título de la sección */
-    max-width: 1200px; /* Ancho máximo para el contenido en escritorio */
-    margin: 0 auto; /* Centra la sección en la página */
+.video-section {
+    padding: 60px 0;
+    background-color: var(--background-light); /* Utiliza tu color de fondo claro */
 }
 
-/* Contenedor principal de los videos */
-.videos-container {
-    display: flex; /* Habilita Flexbox */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan si no hay espacio */
-    gap: 20px; /* Espacio entre los videos */
-    justify-content: center; /* Centra los videos si no llenan la línea */
+/* Contenedor principal para alinear 4 tarjetas horizontalmente en desktop */
+.video-grid {
+    display: grid;
+    /* 4 columnas de igual ancho, con un espacio de 20px entre ellas */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
 }
 
-/* Estilos para cada item de video */
-.video-item {
-    /* Por defecto, en móvil, cada video ocupará el 100% del ancho del contenedor */
-    width: 100%; 
-    max-width: 400px; /* Ancho máximo para el elemento de video */
-    margin-bottom: 20px;
+.video-card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
-/* Estilos para el iframe (el video real) */
-.video-item iframe {
-    width: 100%; 
-    /* Establece una relación de aspecto 16:9 (o usa padding-bottom hack para mayor control) */
-    aspect-ratio: 16 / 9; 
+.video-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.video-card p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    flex-grow: 1; /* Asegura que todos los párrafos ocupen el espacio disponible */
+}
+
+/* Wrapper para hacer el video de Youtube responsivo */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura / ancho = 9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: none;
-    border-radius: 8px; /* Borde redondeado opcional */
 }
 
-/*
- * MEDIA QUERY para Versión de Escritorio (Desktop)
- * Se aplica cuando el ancho de la pantalla es mayor o igual a 768px.
- * Aquí es donde se establece la visualización en línea horizontal.
- */
-@media (min-width: 768px) {
-    .videos-container {
-        /* Se asegura de que los items estén en una sola línea horizontal */
-        flex-wrap: nowrap; 
-        /* Distribuye los elementos para que el espacio se reparta uniformemente */
-        justify-content: space-between; 
-    }
+/* ======================================= */
+/* RESPONSIVE: VISTA MOBILE (COLUMNA)      */
+/* ======================================= */
 
-    .video-item {
-        /* Calcula el ancho para que 4 videos quepan en línea, menos los espacios (gaps) */
-        /* (100% - 3 * 20px de gap) / 4 */
-        width: calc(25% - 15px); 
-        margin-bottom: 0; /* No necesitamos margen inferior en escritorio */
+@media (max-width: 992px) {
+    /* En tablets, cambiamos a 2 columnas */
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
+@media (max-width: 600px) {
+    /* En móviles pequeños, apilamos las tarjetas en una sola columna */
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 
 
@@ -925,7 +945,7 @@ html {
             text-align: center;
             padding: 2rem 0;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
+            color: rgb(255, 255, 255);
             margin-bottom: 2rem;
         }
         
@@ -1025,7 +1045,7 @@ html {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 40px;
+        width: 300px;
         height: 40px;
         background: none;
         border: none;
@@ -1037,7 +1057,7 @@ html {
         height: 4px;
         width: 28px;
         margin: 4px auto;
-        background: #2C3E50;
+        background: #070101;
         border-radius: 2px;
         transition: all 0.3s;
     }
@@ -1054,7 +1074,7 @@ html {
         
         /* CORRECCIÓN CLAVE: Centrar el bloque y ajustar el fondo */
         margin: 0 auto; 
-        background: #ddd5d5;
+        background: #ffffff;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         z-index: 1000;
     }
