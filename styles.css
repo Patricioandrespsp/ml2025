@@ -909,3 +909,109 @@ html {
         margin-bottom: 0; /* No necesitamos margen inferior en escritorio */
     }
 }
+
+
+
+
+/* CSS de publications */
+
+
+    <style>
+        .papers-page {
+            margin-top: 70px;
+            padding: 2rem 0;
+        }
+        
+        .papers-header {
+            text-align: center;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .papers-header h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .papers-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .paper-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .paper-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--shadow-hover);
+        }
+        
+        .paper-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .paper-authors {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .paper-abstract {
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .paper-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .back-link::before {
+            content: '← ';
+            margin-right: 0.5rem;
+        }
+    </style>
+
