@@ -1047,8 +1047,14 @@ html {
         position: absolute;
         top: 60px;
         left: 0;
-        width: 100vw;
-        background: #fff;
+        /* ANCHO MÁXIMO DEL CONTENIDO, NO 100vw */
+        /* width: 100vw; <--- ELIMINE O COMENTE ESTA LÍNEA */
+        max-width: 400px; /* Nuevo ancho para el menú, ajústelo si lo desea */
+        width: 90%;      /* Asegura que ocupe hasta el 90% del contenedor */
+        
+        /* CORRECCIÓN CLAVE: Centrar el bloque y ajustar el fondo */
+        margin: 0 auto; 
+        background: #ddd5d5;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         z-index: 1000;
     }
