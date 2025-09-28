@@ -11,14 +11,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Gallery Modal Functionality
+// Gallery Modal Functionality
 function initGallery() {
     const modal = document.getElementById('gallery-modal');
+    
+    // CORRECCIÓN CLAVE: Si el elemento 'gallery-modal' no existe, la función termina.
+    if (!modal) {
+        return; 
+    }
+
     const modalImg = document.getElementById('modal-img');
     const closeBtn = document.querySelector('.close');
     const galleryItems = document.querySelectorAll('.gallery-item img');
 
     // Open modal when gallery image is clicked
     galleryItems.forEach(img => {
+        // ... (rest of the code)
         img.addEventListener('click', function() {
             modal.style.display = 'block';
             modalImg.src = this.src;
@@ -284,27 +292,17 @@ function initMobileMenu() {
     const navList = document.getElementById('nav-list');
     
     if (mobileMenuToggle && navList) {
-        // Toggle mobile menu
         mobileMenuToggle.addEventListener('click', function() {
-            navList.classList.toggle('active');
             mobileMenuToggle.classList.toggle('active');
+            navList.classList.toggle('active');
         });
-        
-        // Close mobile menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-list a');
-        navLinks.forEach(link => {
+
+        // Opcional: cerrar el menú al hacer click en un link
+        navList.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
-                navList.classList.remove('active');
                 mobileMenuToggle.classList.remove('active');
+                navList.classList.remove('active');
             });
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!navList.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-                navList.classList.remove('active');
-                mobileMenuToggle.classList.remove('active');
-            }
         });
     }
 }
