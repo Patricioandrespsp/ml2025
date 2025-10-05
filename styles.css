@@ -50,7 +50,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 1.0rem 0;
 }
 
 .logo a {
@@ -103,7 +103,7 @@ html {
 
 /* About Section */
 .about-section {
-    padding: 7rem 0 5rem;
+    padding: 2rem 0 5rem;
     background: var(--white);
 }
 
