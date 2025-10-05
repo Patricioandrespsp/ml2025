@@ -7,75 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Additional styles specific to the Grants page */
-        .grants-section {
-            padding: 7rem 0 5rem;
-            background: var(--background-light);
-        }
-        
-        .grants-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-            background: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 5px 15px var(--shadow);
-        }
-        
-        .grants-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .grants-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .grant-item {
-            background: var(--white);
-            margin-bottom: 2rem;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px var(--shadow);
-            transition: all 0.3s ease;
-        }
-        
-        .grant-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px var(--shadow-hover);
-        }
-        
-        .grant-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .grant-description {
-            font-size: 1rem;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        
-        .grant-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        .grant-year {
-            font-weight: 600;
-            color: var(--accent-color);
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -89,8 +20,9 @@
                 </div>
                 <nav class="nav">
                     <ul class="nav-list">
-                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#about">About us</a></li>
                         <li><a href="index.html#publications">Publications</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
                         <li><a href="grants.html">Grants</a></li>
                     </ul>
                 </nav>
@@ -109,97 +41,12 @@
     <!-- Grants Section -->
     <section class="grants-section">
         <div class="container">
-            <h1 class="grants-title">Grants</h1>
-            <div class="grants-container">
-                <ul class="grants-list">
-                    <li class="grant-item">
-                        <div class="grant-title">Fondecyt Initiation 2020 (No. 11200775)</div>
-                        <div class="grant-description">
-                            Reproductive effects of air pollution produced by residential wood combustion exposure in south-central Chile, with emphasis on placenta, umbilical cord, ovary, and endometrium: An experimental study in rats.
-                        </div>
-                        <div class="grant-meta">
-                            <span class="grant-year">2020</span>
-                            <span>Fondecyt</span>
-                        </div>
-                    </li>
-                    
-                    <li class="grant-item">
-                        <div class="grant-title">Pontificia Universidad Católica de Valparaíso (PUCV), DI 039.407/2021 -- Innovative Interdisciplinary Research</div>
-                        <div class="grant-description">
-                            Study of the biomechanics of bones of the endangered Patagonian huemul deer (Hippocamelus bisulcus) using finite element analysis and 3D geometric morphometrics.
-                        </div>
-                        <div class="grant-meta">
-                            <span class="grant-year">2021</span>
-                            <span>PUCV</span>
-                        </div>
-                    </li>
-                    
-                    <li class="grant-item">
-                        <div class="grant-title">Pontificia Universidad Católica de Valparaíso, Research and Advanced Studies Directorate (2020)</div>
-                        <div class="grant-description">
-                            Effects of air pollution exposure from wood-burning stoves during pregnancy and lactation on adult testicular function and morphology: An experimental study in rats.
-                        </div>
-                        <div class="grant-meta">
-                            <span class="grant-year">2020</span>
-                            <span>PUCV</span>
-                        </div>
-                    </li>
-                    
-                    <li class="grant-item">
-                        <div class="grant-title">Pontificia Universidad Católica de Valparaíso, Research and Advanced Studies Directorate (2019)</div>
-                        <div class="grant-description">
-                            Reproductive effects of air pollution produced by residential wood combustion exposure in Chile, with emphasis on the ovary and endometrium: A stereological study in rats.
-                        </div>
-                        <div class="grant-meta">
-                            <span class="grant-year">2019</span>
-                            <span>PUCV</span>
-                        </div>
-                    </li>
-                    
-                    <li class="grant-item">
-                        <div class="grant-title">Pontificia Universidad Católica de Valparaíso, Research and Advanced Studies Directorate (2018)</div>
-                        <div class="grant-description">
-                            Reproductive effects of air pollution produced by residential wood combustion exposure in south-central Chile, with emphasis on the umbilical cord: A stereological analysis in rats.
-                        </div>
-                        <div class="grant-meta">
-                            <span class="grant-year">2018</span>
-                            <span>PUCV</span>
-                        </div>
-                    </li>
-                    
-                    <li class="grant-item">
-                        <div class="grant-title">Universidad Santo Tomás, Research & Postgraduate Directorate (2016-2017)</div>
-                        <div class="grant-description">
-                            Stereology in parenchymal organs of Atlantic salmon (Salmo salar), in collaboration with Marine Harvest, Universidad de La Frontera (UFRO), and Universidad Santo Tomás (UST).
-                        </div>
-                        <div class="grant-meta">
-                            <span class="grant-year">2016-2017</span>
-                            <span>UST</span>
-                        </div>
-                    </li>
-                    
-                    <li class="grant-item">
-                        <div class="grant-title">Universidad Santo Tomás, Research & Postgraduate Directorate (2014-2015)</div>
-                        <div class="grant-description">
-                            Morphological study of the effects of progestogen use as a contraceptive method on the uterus and uterine tubes in female dogs.
-                        </div>
-                        <div class="grant-meta">
-                            <span class="grant-year">2014-2015</span>
-                            <span>UST</span>
-                        </div>
-                    </li>
-                    
-                    <li class="grant-item">
-                        <div class="grant-title">Universidad Santo Tomás, Research & Postgraduate Directorate (2010-2011, Project No. 1990993)</div>
-                        <div class="grant-description">
-                            Application of an intrauterine device in livestock animals as a contraceptive tool in cattle.
-                        </div>
-                        <div class="grant-meta">
-                            <span class="grant-year">2010-2011</span>
-                            <span>UST</span>
-                        </div>
-                    </li>
-                </ul>
+            <h2 class="section-title">Grants</h2>
+            <div class="grants-grid" id="grantsGrid">
+                <!-- Las tarjetas se cargarán dinámicamente con JavaScript -->
+            </div>
+            <div class="show-more-container">
+                <button class="show-more-btn" id="showMoreGrantsBtn">Mostrar más</button>
             </div>
         </div>
     </section>
@@ -220,8 +67,123 @@
     </footer>
 
     <script>
-        // Smooth scroll for navigation
+        // Grants Data (ordenados cronológicamente, del más reciente al más antiguo)
+        const grants = [
+            {
+                title: "Changes in spermatogenesis, energy metabolism and oxidative stress in the adult testis induced by maternal exposure",
+                grant: "Pontificia Universidad Católica de Valparaíso. Research and Advanced Studies Directorate (DI 039.703/2025)",
+                institution: "PUCV",
+                year: "2025"
+            },
+            {
+                title: "Reproductive effects of air pollution produced by residential wood combustion exposure in south-central Chile, with emphasis on placenta, umbilical cord, ovary, and endometrium: An experimental study in rats.",
+                grant: "Fondecyt Initiation 2020 (No. 11200775)",
+                institution: "Fondecyt",
+                year: "2020"
+            },
+            {
+                title: "Study of the biomechanics of bones of the endangered Patagonian huemul deer (Hippocamelus bisulcus) using finite element analysis and 3D geometric morphometrics.",
+                grant: "Pontificia Universidad Católica de Valparaíso (PUCV), DI 039.407/2021 -- Innovative Interdisciplinary Research",
+                institution: "PUCV",
+                year: "2021"
+            },
+            {
+                title: "Effects of air pollution exposure from wood-burning stoves during pregnancy and lactation on adult testicular function and morphology: An experimental study in rats.",
+                grant: "Pontificia Universidad Católica de Valparaíso, Research and Advanced Studies Directorate (2020)",
+                institution: "PUCV",
+                year: "2020"
+            },
+            {
+                title: "Reproductive effects of air pollution produced by residential wood combustion exposure in Chile, with emphasis on the ovary and endometrium: A stereological study in rats.",
+                grant: "Pontificia Universidad Católica de Valparaíso, Research and Advanced Studies Directorate (2019)",
+                institution: "PUCV",
+                year: "2019"
+            },
+            {
+                title: "Reproductive effects of air pollution produced by residential wood combustion exposure in south-central Chile, with emphasis on the umbilical cord: A stereological analysis in rats.",
+                grant: "Pontificia Universidad Católica de Valparaíso, Research and Advanced Studies Directorate (2018)",
+                institution: "PUCV",
+                year: "2018"
+            },
+            {
+                title: "Stereology in parenchymal organs of Atlantic salmon (Salmo salar), in collaboration with Marine Harvest, Universidad de La Frontera (UFRO), and Universidad Santo Tomás (UST).",
+                grant: "Universidad Santo Tomás, Research & Postgraduate Directorate (2016-2017)",
+                institution: "UST",
+                year: "2016-2017"
+            },
+            {
+                title: "Morphological study of the effects of progestogen use as a contraceptive method on the uterus and uterine tubes in female dogs.",
+                grant: "Universidad Santo Tomás, Research & Postgraduate Directorate (2014-2015)",
+                institution: "UST",
+                year: "2014-2015"
+            },
+            {
+                title: "Application of an intrauterine device in livestock animals as a contraceptive tool in cattle.",
+                grant: "Universidad Santo Tomás, Research & Postgraduate Directorate (2010-2011, Project No. 1990993)",
+                institution: "UST",
+                year: "2010-2011"
+            }
+        ];
+
+        // Grants Management
+        let currentGrantsDisplayed = 4;
+        const grantsPerLoad = 4;
+
+        function createGrantCard(grant) {
+            return `
+                <div class="grant-card">
+                    <div class="card-content">
+                        <h3 class="grant-title">${grant.title}</h3>
+                        <p class="grant-name">${grant.grant}</p>
+                        <div class="grant-meta">
+                            <span class="grant-institution">${grant.institution}</span>
+                            <span class="grant-year">${grant.year}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function loadGrants() {
+            const grid = document.getElementById('grantsGrid');
+            grid.innerHTML = grants.map(grant => createGrantCard(grant)).join('');
+            
+            const cards = grid.querySelectorAll('.grant-card');
+            cards.forEach((card, index) => {
+                if (index < currentGrantsDisplayed) {
+                    card.classList.add('visible');
+                }
+            });
+
+            updateShowMoreGrantsButton();
+        }
+
+        function updateShowMoreGrantsButton() {
+            const btn = document.getElementById('showMoreGrantsBtn');
+            if (currentGrantsDisplayed >= grants.length) {
+                btn.classList.add('hidden');
+            } else {
+                btn.classList.remove('hidden');
+            }
+        }
+
+        // Show More Button Handler for Grants
         document.addEventListener('DOMContentLoaded', function() {
+            loadGrants();
+
+            document.getElementById('showMoreGrantsBtn').addEventListener('click', function() {
+                const cards = document.querySelectorAll('.grant-card');
+                const nextBatch = Math.min(currentGrantsDisplayed + grantsPerLoad, grants.length);
+                
+                for (let i = currentGrantsDisplayed; i < nextBatch; i++) {
+                    cards[i].classList.add('visible');
+                }
+                
+                currentGrantsDisplayed = nextBatch;
+                updateShowMoreGrantsButton();
+            });
+
+            // Smooth scroll
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();

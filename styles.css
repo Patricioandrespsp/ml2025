@@ -135,7 +135,7 @@ html {
 }
 
 .about-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 2rem;
@@ -157,7 +157,7 @@ html {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 3rem;
@@ -214,14 +214,6 @@ html {
     margin-bottom: 1rem;
     line-height: 1.4;
     min-height: 80px;
-}
-
-.card-content p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-bottom: 1rem;
-    line-height: 1.5;
-    flex-grow: 1;
 }
 
 .journal-year {
@@ -294,6 +286,112 @@ html {
     background: var(--secondary-color);
 }
 
+/* Grants Section */
+.grants-section {
+    padding: 7rem 0 5rem;
+    background: var(--background-light);
+}
+
+.grants-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.grant-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.grant-card.visible {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.grant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-hover);
+}
+
+.grant-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    min-height: 80px;
+}
+
+.grant-name {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.grant-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.grant-institution {
+    font-weight: 500;
+}
+
+.grant-year {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-info {
+    text-align: center;
+    max-width: 600px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+}
+
 .show-more-container {
     text-align: center;
     margin-top: 2rem;
@@ -330,7 +428,7 @@ html {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
 }
@@ -349,30 +447,33 @@ html {
 }
 
 .footer-info a {
-    color: var(--primary-color);
+    color: var(--white);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-info a:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .footer-map {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
 }
 
 .footer-map iframe {
-    width: 100%;
-    height: 300px;
+    width: 70%;
+    height: 210px;
     border: 0;
 }
 
 /* Responsive para tablets */
 @media (max-width: 1024px) {
-    .publications-grid {
+    .publications-grid,
+    .grants-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -394,28 +495,32 @@ html {
     }
 
     .about-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .publications-grid {
+    .publications-grid,
+    .grants-grid {
         grid-template-columns: 1fr;
     }
 
-    .card-content h3 {
+    .card-content h3,
+    .grant-title {
         min-height: auto;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 2rem;
     }
 
     .footer-map iframe {
-        height: 250px;
+        width: 100%;
+        height: 200px;
     }
 }
 
@@ -429,7 +534,11 @@ html {
     }
 
     .about-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
     }
 
     .about-text p {
