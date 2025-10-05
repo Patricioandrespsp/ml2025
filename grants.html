@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grants - Morpholab Laboratory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to the Grants page */
+        .grants-section {
+            padding: 7rem 0 5rem;
+            background: var(--background-light);
+        }
+        
+        .grants-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+        
+        .grants-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .grants-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .grant-item {
+            background: var(--white);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .grant-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow-hover);
+        }
+        
+        .grant-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .grant-description {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .grant-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .grant-year {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./assets/img/Logo1.png" alt="Icono de Morpholab" width="50" height="50">
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#publications">Publications</a></li>
+                        <li><a href="grants.html">Grants</a></li>
+                    </ul>
+                </nav>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/morphology_lab" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/PauloSalinas" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Grants Section -->
+    <section class="grants-section">
+        <div class="container">
+            <h1 class="grants-title">Grants</h1>
+            <div class="grants-container">
+                <ul class="grants-list">
+                    <li class="grant-item">
+                        <div class="grant-title">Fondecyt Initiation 2020 (No. 11200775)</div>
+                        <div class="grant-description">
+                            Reproductive effects of air pollution produced by residential wood combustion exposure in south-central Chile, with emphasis on placenta, umbilical cord, ovary, and endometrium: An experimental study in rats.
+                        </div>
+                        <div class="grant-meta">
+                            <span class="grant-year">2020</span>
+                            <span>Fondecyt</span>
+                        </div>
+                    </li>
+                    
+                    <li class="grant-item">
+                        <div class="grant-title">Pontificia Universidad Católica de Valparaíso (PUCV), DI 039.407/2021 -- Innovative Interdisciplinary Research</div>
+                        <div class="grant-description">
+                            Study of the biomechanics of bones of the endangered Patagonian huemul deer (Hippocamelus bisulcus) using finite element analysis and 3D geometric morphometrics.
+                        </div>
+                        <div class="grant-meta">
+                            <span class="grant-year">2021</span>
+                            <span>PUCV</span>
+                        </div>
+                    </li>
+                    
+                    <li class="grant-item">
+                        <div class="grant-title">Pontificia Universidad Católica de Valparaíso, Research and Advanced Studies Directorate (2020)</div>
+                        <div class="grant-description">
+                            Effects of air pollution exposure from wood-burning stoves during pregnancy and lactation on adult testicular function and morphology: An experimental study in rats.
+                        </div>
+                        <div class="grant-meta">
+                            <span class="grant-year">2020</span>
+                            <span>PUCV</span>
+                        </div>
+                    </li>
+                    
+                    <li class="grant-item">
+                        <div class="grant-title">Pontificia Universidad Católica de Valparaíso, Research and Advanced Studies Directorate (2019)</div>
+                        <div class="grant-description">
+                            Reproductive effects of air pollution produced by residential wood combustion exposure in Chile, with emphasis on the ovary and endometrium: A stereological study in rats.
+                        </div>
+                        <div class="grant-meta">
+                            <span class="grant-year">2019</span>
+                            <span>PUCV</span>
+                        </div>
+                    </li>
+                    
+                    <li class="grant-item">
+                        <div class="grant-title">Pontificia Universidad Católica de Valparaíso, Research and Advanced Studies Directorate (2018)</div>
+                        <div class="grant-description">
+                            Reproductive effects of air pollution produced by residential wood combustion exposure in south-central Chile, with emphasis on the umbilical cord: A stereological analysis in rats.
+                        </div>
+                        <div class="grant-meta">
+                            <span class="grant-year">2018</span>
+                            <span>PUCV</span>
+                        </div>
+                    </li>
+                    
+                    <li class="grant-item">
+                        <div class="grant-title">Universidad Santo Tomás, Research & Postgraduate Directorate (2016-2017)</div>
+                        <div class="grant-description">
+                            Stereology in parenchymal organs of Atlantic salmon (Salmo salar), in collaboration with Marine Harvest, Universidad de La Frontera (UFRO), and Universidad Santo Tomás (UST).
+                        </div>
+                        <div class="grant-meta">
+                            <span class="grant-year">2016-2017</span>
+                            <span>UST</span>
+                        </div>
+                    </li>
+                    
+                    <li class="grant-item">
+                        <div class="grant-title">Universidad Santo Tomás, Research & Postgraduate Directorate (2014-2015)</div>
+                        <div class="grant-description">
+                            Morphological study of the effects of progestogen use as a contraceptive method on the uterus and uterine tubes in female dogs.
+                        </div>
+                        <div class="grant-meta">
+                            <span class="grant-year">2014-2015</span>
+                            <span>UST</span>
+                        </div>
+                    </li>
+                    
+                    <li class="grant-item">
+                        <div class="grant-title">Universidad Santo Tomás, Research & Postgraduate Directorate (2010-2011, Project No. 1990993)</div>
+                        <div class="grant-description">
+                            Application of an intrauterine device in livestock animals as a contraceptive tool in cattle.
+                        </div>
+                        <div class="grant-meta">
+                            <span class="grant-year">2010-2011</span>
+                            <span>UST</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Pontificia Universidad Católica de Valparaíso</h3>
+                    <p><a href="http://www.morpholab.cl" target="_blank">www.morpholab.cl</a></p>
+                </div>
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.56455246714!2d-71.43940732356555!3d-33.15391327179493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e47cc7030807%3A0x6a2c5896a30c51c3!2sAv.%20Universidad%20330%2C%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1695505008061!5m2!1ses-419!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight - 20;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
