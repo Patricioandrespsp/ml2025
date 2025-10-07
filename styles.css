@@ -418,56 +418,7 @@ html {
     display: none;
 }
 
-/* Footer */
-.footer {
-    background: var(--black);
-    color: var(--white);
-    padding: 3rem 0 2rem;
-}
 
-.footer-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.footer-info h3 {
-    color: var(--white);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.footer-info p {
-    margin-bottom: 0.5rem;
-    opacity: 0.9;
-    font-size: 1rem;
-    color: var(--white);
-}
-
-.footer-info a {
-    color: var(--white);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-info a:hover {
-    color: var(--primary-color);
-}
-
-.footer-map {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-}
-
-.footer-map iframe {
-    width: 70%;
-    height: 210px;
-    border: 0;
-}
 
 /* Responsive para tablets */
 @media (max-width: 1024px) {
@@ -543,4 +494,65 @@ html {
     .about-text p {
         font-size: 0.95rem;
     }
+}
+
+
+
+
+
+
+.contact-image {
+  /* DIMENSIONAMIENTO */
+  /* Establece el ancho máximo al 100% del contenedor para que sea responsiva */
+  max-width: 100%; 
+  /* Fija una altura específica (ejemplo) */
+  height: 250px; 
+  /* Asegura que la imagen mantenga su proporción */
+  object-fit: cover; 
+
+  /* PRESENTACIÓN (Ejemplos opcionales) */
+  /* Añade un borde redondeado */
+  border-radius: 10px; 
+  /* Agrega una sombra sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  /* Centra la imagen si está dentro de un contenedor de bloque */
+  display: block; 
+  margin: 0 auto; 
+}
+
+
+
+/* Estilos generales del footer */
+.footer {
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff;            /* Color de texto blanco para contraste */
+    padding: 10px 20px;        /* Pequeño padding arriba/abajo y a los lados */
+    font-size: 0.9em;          /* Fuente un poco más pequeña */
+    width: 100%;               /* Ocupar todo el ancho */
+}
+
+/* Contenedor del contenido del footer para alinear elementos */
+.footer-content {
+    display: flex;             /* Usar Flexbox para alinear logo y texto */
+    align-items: center;       /* Alinear elementos verticalmente al centro */
+    justify-content: flex-start; /* Alinear contenido al inicio (izquierda) */
+    max-width: 1200px;         /* Limitar el ancho si es necesario, ajusta este valor */
+    margin: 0 auto;            /* Centrar el contenido si se limita el ancho */
+}
+
+/* Estilos para el logo dentro del footer */
+.logo-footer {
+    margin-right: 20px;        /* Espacio a la derecha del logo */
+    /* Asegura que la imagen sea pequeña */
+}
+
+.logo-footer img {
+    width: 130px;               /* Tamaño pequeño del logo */
+    height: 130px;              /* Tamaño pequeño del logo */
+    display: block;            /* Evita problemas de espacio con la imagen */
+}
+
+/* Estilos para el texto de derechos de autor, etc. */
+.footer-content p {
+    margin: 0;                 /* Eliminar el margen por defecto del párrafo */
 }
