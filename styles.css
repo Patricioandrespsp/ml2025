@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -26,7 +25,7 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -87,12 +86,12 @@ html {
 
 .social-icons {
     display: flex;
+    gap: 30px;
 }
 
 .social-icons a {
     color: var(--text-dark);
     font-size: 2.25rem;
-    margin-left: 15px;
     transition: all 0.3s ease;
 }
 
@@ -148,50 +147,26 @@ html {
     text-align: justify;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* People Section Styles */
+/* People Section */
 .people-section {
-    padding: 5rem 0;
-    /* Usar un color de fondo diferente para alternar, similar a publications-section */
-    background: var(--background-light); 
+    padding: 5rem 0 3rem;
+    background: var(--background-light);
 }
 
 .people-grid {
     display: grid;
-    /* Layout de 3 columnas para desktop */
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
     margin-bottom: 3rem;
-    /* Centrar la cuadrícula si el ancho es menor a max-width, aunque container lo maneja */
 }
 
 .person-card {
     background: var(--white);
     border-radius: 15px;
     overflow: hidden;
-    /* Usar las variables de sombra para consistencia */
     box-shadow: 0 10px 30px var(--shadow);
     transition: all 0.3s ease;
-    text-align: center; /* Centrar contenido dentro de la tarjeta */
+    text-align: center;
     display: flex;
     flex-direction: column;
 }
@@ -202,17 +177,14 @@ html {
 }
 
 .person-image-container {
-    /* Altura fija para la imagen para uniformidad */
-    height: 400px; 
+    height: 550px;
     overflow: hidden;
 }
 
 .person-image {
     width: 100%;
     height: 100%;
-    /* Asegura que la imagen cubra el contenedor sin distorsión */
-    object-fit: cover; 
-    display: block;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -222,7 +194,7 @@ html {
 
 .person-content {
     padding: 1.5rem;
-    flex-grow: 1; /* Permite que el contenido se estire si las tarjetas tienen texto desigual */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -242,32 +214,353 @@ html {
     font-weight: 400;
 }
 
-/* ------------------------------------------------------------------ */
-/* RESPONSIVE: Integración con media queries existentes */
+/* Publications Section */
+.publications-section {
+    padding: 3rem 0 5rem;
+    background: var(--background-light);
+}
 
-/* Tablet: 2 columnas, aprovechando la query de 1024px que ya existe */
-@media (max-width: 1024px) {
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+}
+
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.publication-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.publication-card.visible {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.publication-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-hover);
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    min-height: 120px;
+}
+
+.journal-year {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.journal {
+    font-style: italic;
+}
+
+.year {
+    font-weight: 600;
+}
+
+.keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.keyword {
+    background: #eef7ff;
+    color: var(--accent-color);
+    padding: 0.25rem 0.7rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.paper-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.btn {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-pdf {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-pdf:hover {
+    background: #c0392b;
+}
+
+.btn-link {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-link:hover {
+    background: var(--secondary-color);
+}
+
+.blue-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blue-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 5rem 0;
+    background: var(--white);
+}
+
+.contact-card-v2 {
+    background: var(--white);
+    border-radius: 25px;
+    box-shadow: 0 15px 35px var(--shadow);
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.contact-image {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+}
+
+.contact-content-v2 {
+    width: 60%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-main-name {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+.contact-details-list li {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contact-details-list li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-details-list li a:hover {
+    color: var(--primary-color);
+}
+
+.icon-detail {
+    color: var(--accent-color);
+    font-size: 1.25rem;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px 20px;
+    font-size: 0.9em;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .publications-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
     .people-grid {
-        /* Usa el mismo layout de 2 columnas que publications-grid */
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Mobile: 1 columna, aprovechando la query de 768px que ya existe */
+@media (max-width: 1024px) {
+    .contact-card-v2 {
+        flex-direction: column;
+    }
+
+    .contact-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .contact-content-v2 {
+        width: 100%;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .contact-main-name {
+        text-align: center;
+    }
+
+    .contact-details-list {
+        display: block;
+    }
+    
+    .contact-details-list li {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-list {
+        gap: 1rem;
+    }
+    
+    .publications-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .people-grid {
-        /* Usa el mismo layout de 1 columna que publications-grid */
         grid-template-columns: 1fr;
     }
     
     .person-image-container {
-        /* Reducir altura en móviles */
-        height: 500px; 
+        height: 400px;
+    }
+    
+    .about-content {
+        padding: 2rem;
+    }
+    
+    .about-text p {
+        text-align: left;
     }
 }
 
-
-
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .social-icons {
+        gap: 20px;
+    }
+    
+    .social-icons a {
+        font-size: 1.8rem;
+    }
+    
+    .about-content {
+        padding: 1.5rem;
+    }
+    
+    .person-image-container {
+        height: 300px;
+    }
+}
 
 
 
