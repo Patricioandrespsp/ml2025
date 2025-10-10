@@ -331,24 +331,24 @@ const publications = [
 ];
 
 // Publications Management
-let currentDisplayed = 8;
-const itemsPerLoad = 8;
+let currentDisplayedPublications = 8;
+const itemsPerLoadPublications = 8;
 
-function createPublicationCard(pub) {
+function createPublicationCard(publication) {
     return `
         <div class="publication-card">
             <div class="card-content">
-                <h3>${pub.title}</h3>
+                <h3>${publication.title}</h3>
                 <div class="journal-year">
-                    <span class="journal">${pub.journal}</span>
-                    <span class="year">${pub.year}</span>
+                    <span class="journal">${publication.journal}</span>
+                    <span class="year">${publication.year}</span>
                 </div>
                 <div class="keywords">
-                    ${pub.keywords.map(keyword => `<span class="keyword">${keyword}</span>`).join('')}
+                    ${publication.keywords.map(keyword => `<span class="keyword">${keyword}</span>`).join('')}
                 </div>
                 <div class="paper-links">
-                    <a href="${pub.pdfLink}" target="_blank" class="btn btn-pdf">PDF</a>
-                    <a href="${pub.doiLink}" target="_blank" class="btn btn-link">Link</a>
+                    <a href="${publication.pdfLink}" target="_blank" class="btn btn-pdf">PDF</a>
+                    <a href="${publication.doiLink}" target="_blank" class="btn btn-link">Link</a>
                 </div>
             </div>
         </div>
@@ -356,12 +356,12 @@ function createPublicationCard(pub) {
 }
 
 function loadPublications() {
-    const grid = document.getElementById('publicationsGrid');
-    grid.innerHTML = publications.map(pub => createPublicationCard(pub)).join('');
+    const publicationsGrid = document.getElementById('publicationsGrid');
+    publicationsGrid.innerHTML = publications.map(publication => createPublicationCard(publication)).join('');
     
-    const cards = grid.querySelectorAll('.publication-card');
-    cards.forEach((card, index) => {
-        if (index < currentDisplayed) {
+    const publicationCards = publicationsGrid.querySelectorAll('.publication-card');
+    publicationCards.forEach((card, index) => {
+        if (index < currentDisplayedPublications) {
             card.classList.add('visible');
         }
     });
@@ -370,34 +370,61 @@ function loadPublications() {
 }
 
 function updateShowMoreButton() {
-    const btn = document.getElementById('showMoreBtn');
-    if (currentDisplayed >= publications.length) {
-        btn.classList.add('hidden');
+    const showMoreButton = document.getElementById('showMoreBtn');
+    if (currentDisplayedPublications >= publications.length) {
+        showMoreButton.style.display = 'none';
     } else {
-        btn.classList.remove('hidden');
+        showMoreButton.style.display = 'block';
     }
 }
 
-// Show More Button Handler
-document.addEventListener('DOMContentLoaded', function() {
-    loadPublications();
-
-    document.getElementById('showMoreBtn').addEventListener('click', function() {
-        const cards = document.querySelectorAll('.publication-card');
-        const nextBatch = Math.min(currentDisplayed + itemsPerLoad, publications.length);
+// Mobile Menu Functionality
+function initializeMobileMenu() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (hamburgerMenu && mainNav) {
+        hamburgerMenu.addEventListener('click', function() {
+            hamburgerMenu.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (mainNav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        });
         
-        for (let i = currentDisplayed; i < nextBatch; i++) {
-            cards[i].classList.add('visible');
-        }
+        // Close menu when clicking on a link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
         
-        currentDisplayed = nextBatch;
-        updateShowMoreButton();
-    });
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = mainNav.contains(event.target);
+            const isClickOnHamburger = hamburgerMenu.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnHamburger && mainNav.classList.contains('active')) {
+                hamburgerMenu.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+}
 
-    // Smooth scroll
+// Smooth Scroll Functionality
+function initializeSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+        anchor.addEventListener('click', function (event) {
+            event.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 const headerHeight = document.querySelector('.header').offsetHeight;
@@ -408,5 +435,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+    });
+}
+
+// Show More Button Handler
+function initializeShowMoreButton() {
+    const showMoreButton = document.getElementById('showMoreBtn');
+    if (showMoreButton) {
+        showMoreButton.addEventListener('click', function() {
+            const publicationCards = document.querySelectorAll('.publication-card');
+            const nextBatch = Math.min(currentDisplayedPublications + itemsPerLoadPublications, publications.length);
+            
+            for (let i = currentDisplayedPublications; i < nextBatch; i++) {
+                publicationCards[i].classList.add('visible');
+            }
+            
+            currentDisplayedPublications = nextBatch;
+            updateShowMoreButton();
+        });
+    }
+}
+
+// Initialize all functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    loadPublications();
+    initializeMobileMenu();
+    initializeSmoothScroll();
+    initializeShowMoreButton();
+    
+    // Add resize event listener to handle menu on window resize
+    window.addEventListener('resize', function() {
+        const mainNav = document.getElementById('mainNav');
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        
+        // Reset mobile menu state on larger screens
+        if (window.innerWidth > 768) {
+            if (mainNav) mainNav.classList.remove('active');
+            if (hamburgerMenu) hamburgerMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     });
 });
