@@ -210,6 +210,11 @@ html {
     box-shadow: 0 15px 40px var(--shadow-hover);
 }
 
+.person-card.no-photo {
+    min-height: 300px;
+    justify-content: center;
+}
+
 .person-image-container {
     height: 450px;
     overflow: hidden;
@@ -249,6 +254,7 @@ html {
     font-size: 1rem;
     color: var(--text-light);
     font-weight: 400;
+    margin-bottom: 0.3rem;
 }
 
 /* Publications Section */
@@ -316,6 +322,13 @@ html {
     margin-bottom: 1rem;
     line-height: 1.4;
     min-height: 80px;
+}
+
+.grant-details {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.5;
 }
 
 .journal-year {

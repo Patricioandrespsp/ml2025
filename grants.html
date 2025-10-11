@@ -14,24 +14,33 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="./assets/img/Logo1.png" alt="Icono de Morpholab" width="50" height="50">
+                    <a href="index.html#about">
+                        <img src="./assets/img/Logo1.png" alt="Icono de Morpholab" width="65" height="65">
                     </a>
                 </div>
-                <nav class="nav">
+                
+                <!-- Hamburger Menu Icon for Mobile -->
+                <div class="hamburger-menu" id="hamburgerMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="nav" id="mainNav">
                     <ul class="nav-list">
                         <li><a href="index.html#about">About us</a></li>
+                        <li><a href="index.html#people">People</a></li>
                         <li><a href="index.html#publications">Publications</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
                         <li><a href="grants.html">Grants</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/morphology_lab" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://x.com/PauloSalinas" target="_blank">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://x.com/PauloSalinas" target="_blank" class="x-icon">
+                        <i class="fab fa-x-twitter"></i>
                     </a>
                 </div>
             </div>
@@ -39,30 +48,22 @@
     </header>
 
     <!-- Grants Section -->
-    <section class="grants-section">
+    <section class="publications-section">
         <div class="container">
             <h2 class="section-title">Grants</h2>
-            <div class="grants-grid" id="grantsGrid">
+            <div class="publications-grid" id="grantsGrid">
                 <!-- Las tarjetas se cargarán dinámicamente con JavaScript -->
             </div>
             <div class="show-more-container">
-                <button class="show-more-btn" id="showMoreGrantsBtn">Mostrar más</button>
+                <button class="show-more-btn blue-btn" id="showMoreGrantsBtn">Show all</button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Pontificia Universidad Católica de Valparaíso</h3>
-                    <p><a href="http://www.morpholab.cl" target="_blank">www.morpholab.cl</a></p>
-                </div>
-                <div class="footer-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.56455246714!2d-71.43940732356555!3d-33.15391327179493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e47cc7030807%3A0x6a2c5896a30c51c3!2sAv.%20Universidad%20330%2C%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1695505008061!5m2!1ses-419!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
+        <div class="footer-content">
+            <p>&copy; 2025 Paulo Salinas. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -131,13 +132,13 @@
 
         function createGrantCard(grant) {
             return `
-                <div class="grant-card">
+                <div class="publication-card">
                     <div class="card-content">
-                        <h3 class="grant-title">${grant.title}</h3>
-                        <p class="grant-name">${grant.grant}</p>
-                        <div class="grant-meta">
-                            <span class="grant-institution">${grant.institution}</span>
-                            <span class="grant-year">${grant.year}</span>
+                        <h3>${grant.title}</h3>
+                        <p class="grant-details">${grant.grant}</p>
+                        <div class="journal-year">
+                            <span class="journal">${grant.institution}</span>
+                            <span class="year">${grant.year}</span>
                         </div>
                     </div>
                 </div>
@@ -148,7 +149,7 @@
             const grid = document.getElementById('grantsGrid');
             grid.innerHTML = grants.map(grant => createGrantCard(grant)).join('');
             
-            const cards = grid.querySelectorAll('.grant-card');
+            const cards = grid.querySelectorAll('.publication-card');
             cards.forEach((card, index) => {
                 if (index < currentGrantsDisplayed) {
                     card.classList.add('visible');
@@ -161,9 +162,9 @@
         function updateShowMoreGrantsButton() {
             const btn = document.getElementById('showMoreGrantsBtn');
             if (currentGrantsDisplayed >= grants.length) {
-                btn.classList.add('hidden');
+                btn.style.display = 'none';
             } else {
-                btn.classList.remove('hidden');
+                btn.style.display = 'block';
             }
         }
 
@@ -172,7 +173,7 @@
             loadGrants();
 
             document.getElementById('showMoreGrantsBtn').addEventListener('click', function() {
-                const cards = document.querySelectorAll('.grant-card');
+                const cards = document.querySelectorAll('#grantsGrid .publication-card');
                 const nextBatch = Math.min(currentGrantsDisplayed + grantsPerLoad, grants.length);
                 
                 for (let i = currentGrantsDisplayed; i < nextBatch; i++) {
@@ -182,6 +183,46 @@
                 currentGrantsDisplayed = nextBatch;
                 updateShowMoreGrantsButton();
             });
+
+            // Mobile Menu Functionality
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (hamburgerMenu && mainNav) {
+                hamburgerMenu.addEventListener('click', function() {
+                    hamburgerMenu.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                    
+                    // Prevent body scroll when menu is open
+                    if (mainNav.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        hamburgerMenu.classList.remove('active');
+                        mainNav.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = mainNav.contains(event.target);
+                    const isClickOnHamburger = hamburgerMenu.contains(event.target);
+                    
+                    if (!isClickInsideNav && !isClickOnHamburger && mainNav.classList.contains('active')) {
+                        hamburgerMenu.classList.remove('active');
+                        mainNav.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
 
             // Smooth scroll
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
